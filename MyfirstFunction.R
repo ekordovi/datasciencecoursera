@@ -14,3 +14,14 @@ above <- function(x, n) {
       use <- x > n
       x[use]
 }
+
+columnmean <- function(y, removeNA = TRUE){
+        nc <- ncol(y)
+        # empty vector
+        means <- numeric(nc)
+        for(i in 1:nc){
+                means[i] <- mean(y[, i], na.rm = removeNA)
+        }
+        means
+}
+
